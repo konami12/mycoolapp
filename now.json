@@ -1,0 +1,7 @@
+{
+    "buils": [{
+        "src": "app.js",
+        "use": "@now/node-server"
+    }],
+    "version": 2
+}
