@@ -4,7 +4,8 @@
   "description": "node app ",
   "main": "app.js",
   "scripts": {
-    "start": "babel-node run_server.js"
+    "dev": "node run_server.js",
+    "build": "babel  ./app.js  -d ./dist/"
   },
   "repository": {
     "type": "git",
