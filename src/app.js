@@ -9,7 +9,7 @@ Server.use("/", Statics(`${ROOT_PATH}/public/`));
 
 Server.get("/", (request, response) => {
     response.status(200);
-    response.send("<h1>Hola Server ⚙️ 2 Glitchs</h1>");
+    response.send("<h1>Hola Server ⚙️ 2 Glitchs prestart</h1>");
 });
 
 Server.listen(PORT, () => {
