@@ -15,3 +15,6 @@ Server.get("/", (request, response) => {
 Server.listen(PORT, () => {
     console.log("Corriendo => ", PORT);
 });
+
+
+export default Server;
