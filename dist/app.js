@@ -20,7 +20,7 @@ var ROOT_PATH = _path["default"].join(__dirname, "../");
 Server.use("/", (0, _express["static"])("".concat(ROOT_PATH, "/public/")));
 Server.get("/", function (request, response) {
   response.status(200);
-  response.send("<h1>Hola Server ⚙️ 2 Glitchs usando build 2</h1>");
+  response.send("<h1>Hola Server ⚙️ 2 Glitchs usando build 20</h1>");
 });
 Server.listen(PORT, function () {
   console.log("Corriendo => ", PORT);
