@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node run_server.js",
     "build": "babel ./src/app -d ./dist/",
-    "test": "ls",
+    "test:app": "ls",
     "start": "npm run build; node ./dist/app.js"
   },
   "repository": {
