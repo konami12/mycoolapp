@@ -3,4 +3,4 @@
  * Launches the app server.
  */
 require("@babel/register"); // eslint-disable-line
-require("./src/app.js");
+require("./src/app/app.js");
