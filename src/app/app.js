@@ -8,12 +8,12 @@ const ROOT_PATH = Path.join(__dirname, "../");
 const Mongoose = require("mongoose");
 
 // configuracion
-const USER = "jmendez";
-const PASS = "konami05";
+const USER = "pokemon";
+const PASS = "p0k3m0n.";
 const DB = "api";
 
 // conector
-Mongoose.connect(`mongodb+srv://${USER}:${PASS}.@cluster0-n1dqb.mongodb.net/${DB}?retryWrites=true&w=majority`, { useNewUrlParser: true });
+Mongoose.connect(`mongodb+srv://${USER}:${PASS}@cluster0-u55vg.mongodb.net/${DB}?retryWrites=true&w=majority`, { useNewUrlParser: true });
 
 // Generamos un schema
 const SCHEMA_POKEMON = new Mongoose.Schema({

@@ -26,11 +26,11 @@ var ROOT_PATH = _path["default"].join(__dirname, "../"); // importamos el paquet
 var Mongoose = require("mongoose"); // configuracion
 
 
-var USER = "jmendez";
-var PASS = "konami05";
+var USER = "pokemon";
+var PASS = "p0k3m0n.";
 var DB = "api"; // conector
 
-Mongoose.connect("mongodb+srv://".concat(USER, ":").concat(PASS, ".@cluster0-n1dqb.mongodb.net/").concat(DB, "?retryWrites=true&w=majority"), {
+Mongoose.connect("mongodb+srv://".concat(USER, ":").concat(PASS, "@cluster0-u55vg.mongodb.net/").concat(DB, "?retryWrites=true&w=majority"), {
   useNewUrlParser: true
 }); // Generamos un schema
 
