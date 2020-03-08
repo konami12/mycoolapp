@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 3000;
 const ROOT_PATH = Path.join(__dirname, "../");
 // importamos el paquete mongoose
 const Mongoose = require("mongoose");
-const POKEMON = require("./db.json");
 
 // configuracion
 const USER = "jmendez";
@@ -53,6 +52,7 @@ Server.get("/", (request, response) => {
     });
     SAVE.save((error, data) => {
         if (error) console.log(error);
+        console.log(data)
     });
     response.status(200);
     response.send("<h1>Hola Server ⚙️</h1>");
