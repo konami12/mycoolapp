@@ -13,7 +13,7 @@ const PASS = "p0k3m0n.";
 const DB = "api";
 
 // conector
-Mongoose.connect(`mongodb+srv://${USER}:${PASS}@cluster0-u55vg.mongodb.net/${DB}?retryWrites=true&w=majority`, { useNewUrlParser: true });
+
 
 // Generamos un schema
 const SCHEMA_POKEMON = new Mongoose.Schema({
@@ -42,9 +42,21 @@ const SCHEMA_POKEMON = new Mongoose.Schema({
 // Basado en el Schema se genera el modelo
 const Pokemon = Mongoose.model("Pokemon", SCHEMA_POKEMON);
 
-
-
 Server.use("/", Statics(`${ROOT_PATH}/public/`));
+
+
+Server.use("/find/:id?", (request, response) => {
+    const { id = "" } = request.params;
+    Pokemon.find({}, (error, data) => {
+        if (error) {
+            response.status(500);
+            response.json(error);
+        }
+        response.status(200);
+        response.json(data);
+    });
+});
+
 
 Server.get("/", (request, response) => {
     const SAVE = new Pokemon({
@@ -52,15 +64,25 @@ Server.get("/", (request, response) => {
     });
     SAVE.save((error, data) => {
         if (error) console.log(error);
-        console.log(data)
+        console.log(data);
     });
     response.status(200);
     response.send("<h1>Hola Server ⚙️</h1>");
 });
 
-Server.listen(PORT, () => {
-    console.log("Corriendo => ", PORT);
-});
 
+Mongoose.connect(
+    `mongodb+srv://${USER}:${PASS}@cluster0-u55vg.mongodb.net/${DB}?retryWrites=true&w=majority`,
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    },
+    (error, data) => {
+        if (error) console.log(error);
+        Server.listen(PORT, () => {
+            console.log("Corriendo => ", PORT);
+        });
+    }
+);
 
 export default Server;

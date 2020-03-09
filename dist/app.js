@@ -62,6 +62,19 @@ var SCHEMA_POKEMON = new Mongoose.Schema({
 
 var Pokemon = Mongoose.model("Pokemon", SCHEMA_POKEMON);
 Server.use("/", (0, _express["static"])("".concat(ROOT_PATH, "/public/")));
+Server.use("/find/:id?", function (request, response) {
+  var _request$params$id = request.params.id,
+      id = _request$params$id === void 0 ? "" : _request$params$id;
+  Pokemon.find({
+    _id: id
+  }, function (error, data) {
+    if (error) {
+      console.log(error);
+    }
+
+    console.log(data);
+  });
+});
 Server.get("/", function (request, response) {
   var SAVE = new Pokemon({
     name: "dante"
